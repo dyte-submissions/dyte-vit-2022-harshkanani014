@@ -150,12 +150,12 @@ This is an example of how to list things you need to use the software and how to
     ```
 5. Use above to enter csv file and check dependency version
     ```sh
-    dyte -i <file-name>.csv -d <dependency-name>
+    dyte check -i <file-name>.csv -d <dependency-name>
     ```
    
     We can also give multiple dependency to check for example
     ```sh
-    dyte -i <file-name>.csv -d <dependency-name> -d <dependency-name> -d <dependency-name>
+    dyte check -i <file-name>.csv -d <dependency-name> -d <dependency-name> -d <dependency-name>
     ```
    
     ```
@@ -185,23 +185,29 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Exceuting command : dyte check -i input.csv -d axios@0.23.0
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+![alt text](images/exceution1.PNG)
+
+### OUTPUT 
+
+![alt text](images/output1.PNG)
+
+### Exceuting command : dyte update -i input.csv -d axios@0.23.0
+
+![alt text](images/exceution2.PNG)
+
+### OUTPUT 
+
+![alt text](images/output2.PNG)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- ROADMAP -->
-## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -237,20 +243,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - Harsh Kanani - harshkanani100@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014](https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
 
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
