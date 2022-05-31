@@ -85,22 +85,32 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Command Line Interface (CLI) Tool to check version of dependency present in repositories file uploaded by user.
+Dyte CLI tool provides features to check satisfied version and return output.csv with all satisfied version 
+and also creates Pull request to update particular version of dependency. Easy to use CLI tool with clean and 
+clear output. And support package.json of nodeJS and requirements.txt of python.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+### Extra Features
+#### 1. supports NodeJs and Python Both
+#### 2. Can work on Python and NodeJS Dependency checker
+#### 2. Proper format of csv along with all information
+#### 3. Can also check and update Pull request for Python libraries as well
+#### 4. Re-usable code so can add more language support in feature
+#### 5. Styling in CLI
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Python](https://www.python.org/)
+
+### Libraries used
+
+* [Git]()
+* [pyinstaller]()
+* [click]()
+* [progress]()
+* [pyfiglet]()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -115,26 +125,58 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* pip
   ```sh
-  npm install npm@latest -g
+  python3 -m pip install --upgrade pip
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Clone the repo
+    ```sh
+    git clone https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014
+    ```
+2. Create and Activate virtal environment 
+    ```sh
+    py -m venv <env-name>
+    ```
+  
+    ```sh
+    <env-name>\Scripts\activate.bat
+    ```
+4. Install python libraries
+    ```sh
+    pip install -r requirements.txt
+    ```
+5. Use above to enter csv file and check dependency version
+    ```sh
+    dyte -i <file-name>.csv -d <dependency-name>
+    ```
+   
+    We can also give multiple dependency to check for example
+    ```sh
+    dyte -i <file-name>.csv -d <dependency-name> -d <dependency-name> -d <dependency-name>
+    ```
+   
+    ```
+    -i = input-file
+    -d = depedency-name
+    ```
+ 6. Use above to enter csv file and update PULL request based on version of dependency
+    ```sh
+    dyte update -i <file-name>.csv -d <dependency-name>
+    ```
+   
+    We can also give multiple dependency to check for example
+    ```sh
+    dyte update -i <file-name>.csv -d <dependency-name> -d <dependency-name> -d <dependency-name>
+    ```
+   
+    ```
+    update = to create PR if version is not satisfied 
+    -i = input-file
+    -d = depedency-name
+    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
