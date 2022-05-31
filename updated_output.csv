@@ -1,0 +1,5 @@
+repo,repo link,dependacy_name,version,version_satisfied,update_pr
+shopify,harshkanani014/fungataua-crm-backend,No Dependacy found,No version found,No version found,
+dyte-react-sample-app,dyte-in/react-sample-app,axios,0.24.0,True,
+dyte-js-sample-app,dyte-in/javascript-sample-app,axios,0.21.1,False,https://github.com/harshkanani014/javascript-sample-app/pull/4
+dyte-sample-app-backend,dyte-in/backend-sample-app,axios,0.23.0,True,
