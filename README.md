@@ -188,7 +188,7 @@ This is an example of how to list things you need to use the software and how to
 
 
 
-### Installation From direct repo
+### Install Directly from Github repo
 
 1. Create and Activate virtual environment 
     ```sh
