@@ -152,9 +152,9 @@ This is an example of how to list things you need to use the software and how to
 ### Usage
 
 3. Help command 
-  ```sh
-  dyte --help
-  ```
+    ```sh
+    dyte --help
+    ```
 4. Use above to enter csv file and check dependency version
     ```sh
     dyte check -i <file-name>.csv -d <dependency-name>
@@ -210,8 +210,8 @@ This is an example of how to list things you need to use the software and how to
     ```
 
 ### Usage
-    ```
-6. Use above to enter csv file and check dependency version
+  
+4. Use above to enter csv file and check dependency version
     ```sh
     python dyte.py check -i <file-name>.csv -d <dependency-name>
     ```
@@ -226,7 +226,7 @@ This is an example of how to list things you need to use the software and how to
     -d = depedency-name
     ```
 
-7. Use above to enter csv file and update PULL request based on version of dependency
+5. Use above to enter csv file and update PULL request based on version of dependency
     ```sh
     python dyte.py update -i <file-name>.csv -d <dependency-name>
     ```
@@ -247,7 +247,7 @@ This is an example of how to list things you need to use the software and how to
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage with output
 
 ### Exceuting command : dyte check -i input.csv -d axios@0.23.0
 
