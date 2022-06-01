@@ -85,10 +85,14 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Command Line Interface (CLI) Tool to check version of dependency present in repositories file uploaded by user.
-Dyte CLI tool provides features to check satisfied version and return output.csv with all satisfied version 
-and also creates Pull request to update particular version of dependency. Easy to use CLI tool with clean and 
-clear output. And support package.json of nodeJS and requirements.txt of python.
+Dyte SDK Tool is Command Line Interface (CLI) Tool to check version of dependency present in repositories file uploaded by user.
+Dyte CLI tool provides the following features:
+
+1. Check satisfied version and return output.csv with all satisfied versions. 
+2. Also creates Pull request to update particular version of multiple dependencies in single command. 
+3. Easy to use CLI tool with clean and clear output.
+4. Create PR request for updating dependencies.
+5. Support package.json (NodeJS) and requirements.txt (Python).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
