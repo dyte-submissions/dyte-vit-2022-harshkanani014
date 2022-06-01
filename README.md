@@ -155,7 +155,7 @@ This is an example of how to list things you need to use the software and how to
     ```sh
     dyte --help
     ```
-4. Use above to enter csv file and check dependency version
+4. Use below command to enter csv file and check dependency version
     ```sh
     dyte check -i <file-name>.csv -d <dependency-name>
     ```
@@ -170,7 +170,7 @@ This is an example of how to list things you need to use the software and how to
     -d = depedency-name
     ```
 
-5. Use above to enter csv file and update PULL request based on version of dependency
+5. Use below command to enter csv file and update PULL request based on version of dependency
     ```sh
     dyte update -i <file-name>.csv -d <dependency-name>
     ```
@@ -211,7 +211,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Usage
   
-4. Use above to enter csv file and check dependency version
+4. Use bellow to enter csv file and check dependency version
     ```sh
     python dyte.py check -i <file-name>.csv -d <dependency-name>
     ```
@@ -226,7 +226,7 @@ This is an example of how to list things you need to use the software and how to
     -d = depedency-name
     ```
 
-5. Use above to enter csv file and update PULL request based on version of dependency
+5. Use bellow to enter csv file and update PULL request based on version of dependency
     ```sh
     python dyte.py update -i <file-name>.csv -d <dependency-name>
     ```
