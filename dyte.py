@@ -194,6 +194,14 @@ def update_dependacy_version(input_file, dependancy_names):
                     json_content['dependencies'][dependency_name] = "^"+version
                     new_content = json.dumps(json_content, indent=3)
                     pr  = myfork.update_file(contents.path, "update dependacy", new_content, contents.sha, branch="dependancy-update")
+
+                    # updating dependency version in package-lock.json
+                    contents = myfork.get_contents("package-lock.json", ref='dependancy-update')
+                    decoded_content = contents.decoded_content
+                    json_content = json.loads(decoded_content) # convert decoded content into json format
+                    json_content['dependencies'][dependency_name] = "^"+version
+                    new_content = json.dumps(json_content, indent=3)
+                    pr  = myfork.update_file(contents.path, "update dependacy", new_content, contents.sha, branch="dependancy-update")
                     try:
                         pr = myfork.create_pull(title="chore: updates " + dependency_name + " to " + version, 
                                                             body="Updates the version of " + dependency_name +  " from " + result[3] + " to " + version, 
