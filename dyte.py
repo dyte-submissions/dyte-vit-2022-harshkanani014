@@ -244,7 +244,7 @@ def update_dependacy_version(input_file, dependancy_names):
                         pr_request = pr.html_url
                         result.append(pr_request)
                     except:
-                        result.append('PR already exists')
+                        result.append('Your PR already exists')
 
                 else:
                     result.append('')
@@ -287,7 +287,7 @@ def update_dependacy_version(input_file, dependancy_names):
                             pr_request = pr.html_url
                             result.append(pr_request)
                         except:
-                            result.append('PR already exists')
+                            result.append('Your PR already exists')
                     else:
                         result.append('')
                     writer.writerow(result)
@@ -308,38 +308,6 @@ messages()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# import os
-# import git
-# import shutil
-# import tempfile
-
-# # Create temporary dir
-# t = tempfile.mkdtemp()
-# # Clone into temporary dir
-# git.Repo.clone_from('https://github.com/dyte-in/backend-sample-app', t, branch='main', depth=1)
-# # Copy desired file from temporary dir
-# shutil.move(os.path.join(t, 'package.json'), '.')
-# # Remove temporary dir
-# shutil.rmtree(t)
-
-
-
-
-# Github Enterprise with custom hostname
-# g = Github(base_url="https://{hostname}/api/v3", login_or_token="access_token")
 
 
 
