@@ -1,9 +1,6 @@
-from pydoc import cli
 import csv
-import re
 from github import Github
 import json
-import github
 from progress.bar import Bar
 from progress.bar import FillingSquaresBar
 from progress.spinner import PieSpinner
@@ -11,11 +8,17 @@ import click
 from pyfiglet import Figlet
 
 
+# Function to check dependency version of nodeJS packages
+# return : List
 def nodejs_dependancy_version_checker(repo, dependency_name, repos, repo_link, version):
-    contents = repo.get_contents("package.json")
-    decoded_content = contents.decoded_content
+    '''
+    return : List[]
+    '''
+    contents = repo.get_contents("package.json") # get content of package.json
+    decoded_content = contents.decoded_content # decode content into readable form
     json_content = json.loads(decoded_content) # convert decoded content into json format
     dependencies = json_content['dependencies']
+    # check if required dependencies present in File 
     if dependency_name not in dependencies:
         ans = [repos, repo_link, "No Dependacy found", "No version found", "No version found"]
 
@@ -26,8 +29,12 @@ def nodejs_dependancy_version_checker(repo, dependency_name, repos, repo_link, v
             ans = [repos, repo_link, dependency_name,dependencies[dependency_name][1:], False]
     return ans
 
-
+# Function to check dependency version of nodeJS packages
+# return : List
 def python_dependancy_version_checker(repo, dependency_name, repos, repo_link, version):
+    '''
+    return : List[]
+    '''
     contents = repo.get_contents("requirements.txt")
     decoded_content = contents.decoded_content
     str_content = decoded_content.decode('utf-8').split() # convert decoded content into st format
@@ -48,13 +55,15 @@ def python_dependancy_version_checker(repo, dependency_name, repos, repo_link, v
 def messages():
   pass
 
+
+# Set commands and argument for 
 @click.command('check')
 @click.option('--input_file', '-i')
 @click.option('--dependancy_names', '-d', multiple=True)
 def check_dependancy_versions(input_file, dependancy_names):
     f = Figlet(font='slant')
     print(f.renderText('Dyte SDK tool'))
-    bar = FillingSquaresBar('Processing', max=15)
+    bar = FillingSquaresBar('Processing', max=23)
     # using an access token
     print("How to generate Github Token? Visit link: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token")
     print()
@@ -90,11 +99,9 @@ def check_dependancy_versions(input_file, dependancy_names):
         split_index = dependency.index("@")
         dependency_name = dependency[:split_index]
         version = dependency[split_index+1:]
-        # print(dependency_name)
         for repos in data:
             bar.next()
             print(" " + "Repo clone in process")
-            # spinner.next()
             repo_link = data[repos]
             if "/"==repo_link[-1]:
                 repo_link = repo_link[19:len(repo_link)-1]
@@ -105,7 +112,7 @@ def check_dependancy_versions(input_file, dependancy_names):
                 bar.next()
                 print(" checking nodejs package.json")
                 result = nodejs_dependancy_version_checker(repo, dependency_name, repos, repo_link, version)
-                # print(ans)
+                print(result)
                 writer.writerow(result)
             except:
                 bar.next()
@@ -127,7 +134,7 @@ def update_dependacy_version(input_file, dependancy_names):
     f = Figlet(font='slant')
     print(f.renderText('Dyte SDK tool'))
     spinner = PieSpinner('Loading ')
-    bar = FillingSquaresBar('Processing', max=15)
+    bar = FillingSquaresBar('Processing', max=23)
     # using an access token
     print("How to generate Github? Visit link: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token")
     print()
@@ -177,7 +184,6 @@ def update_dependacy_version(input_file, dependancy_names):
                 bar.next()
                 print(" checking nodejs package.json")
                 result = nodejs_dependancy_version_checker(repo, dependency_name, repos, repo_link, version)
-                # print(ans)
                 if result[4]==False:
                     bar.next()
                     print(" creating PR request for " + repo_link)
@@ -203,7 +209,7 @@ def update_dependacy_version(input_file, dependancy_names):
                     new_content = json.dumps(json_content, indent=3)
                     pr  = myfork.update_file(contents.path, "update dependacy", new_content, contents.sha, branch="dependancy-update")
                     try:
-                        pr = myfork.create_pull(title="chore: updates " + dependency_name + " to " + version, 
+                        pr = repo.create_pull(title="chore: updates " + dependency_name + " to " + version, 
                                                             body="Updates the version of " + dependency_name +  " from " + result[3] + " to " + version, 
                                                             head="harshkanani014:dependancy-update", 
                                                             base="main",
@@ -246,7 +252,7 @@ def update_dependacy_version(input_file, dependancy_names):
                         new_content = "\n".join(str_content)
                         pr  = myfork.update_file(contents.path, "update dependacy", new_content, contents.sha, branch="dependancy-update")
                         try:
-                            pr = myfork.create_pull(title="chore: updates " + dependency_name + " to " + version, 
+                            pr = repo.create_pull(title="chore: updates " + dependency_name + " to " + version, 
                                                                 body="Updates the version of " + dependency_name +  " from " + result[3] + " to " + version, 
                                                                 head="harshkanani014:dependancy-update", 
                                                                 base="master",
@@ -257,7 +263,6 @@ def update_dependacy_version(input_file, dependancy_names):
                             result.append('')
                     else:
                         result.append('')
-                    # print(result)
                     writer.writerow(result)
                 except:
                     print("File Not Found/Pull request already exist")
