@@ -93,6 +93,7 @@ clear output. And support package.json of nodeJS and requirements.txt of python.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Extra Features
+#### 1. Published package on Pypi so anyone can use using Pypi 
 #### 1. supports NodeJs and Python Both
 #### 2. Can work on Python and NodeJS Dependency checker
 #### 2. Proper format of csv along with all information
@@ -130,13 +131,8 @@ This is an example of how to list things you need to use the software and how to
   python3 -m pip install --upgrade pip
   ```
 
-### Installation
-
-1. Clone the repo
-    ```sh
-    git clone https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014
-    ```
-2. Create and Activate virtal environment 
+### Installation of code from package published on Pypi
+1. Create and Activate virtal environment 
     ```sh
     py -m venv <env-name>
     ```
@@ -144,9 +140,27 @@ This is an example of how to list things you need to use the software and how to
     ```sh
     <env-name>\Scripts\activate.bat
     ```
-4. Install python libraries
+
+2. Install Package from Pypi
+   ```sh
+   pip install Dyte-Dependency-version-checker
+   ```
+   [Note : Skip installation from Direct repo if you already installed our package from Pypi]
+
+
+### Installation From direct repo
+
+1. Clone the repo
+    ```sh
+    git clone https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014
+    ```
+
+2. Install python libraries
     ```sh
     pip install -r requirements.txt
+    ```
+
+### Usage
     ```
 5. Use above to enter csv file and check dependency version
     ```sh
