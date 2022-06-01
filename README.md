@@ -18,11 +18,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -83,6 +79,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+#### Published Package on Pypi : [https://pypi.org/project/Dyte-Dependency-version-checker/](https://pypi.org/project/Dyte-Dependency-version-checker/)
+
+
+
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Command Line Interface (CLI) Tool to check version of dependency present in repositories file uploaded by user.
@@ -93,12 +93,13 @@ clear output. And support package.json of nodeJS and requirements.txt of python.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Extra Features
-#### 1. supports NodeJs and Python Both
-#### 2. Can work on Python and NodeJS Dependency checker
-#### 2. Proper format of csv along with all information
-#### 3. Can also check and update Pull request for Python libraries as well
-#### 4. Re-usable code so can add more language support in feature
-#### 5. Styling in CLI
+#### 1. Published package on Pypi so anyone can use using Pypi [Dyte Dependency vesrion checker](https://pypi.org/project/Dyte-Dependency-version-checker/)
+#### 2. supports NodeJs and Python Both
+#### 3. Can work on Python and NodeJS Dependency checker
+#### 4. Proper format of csv along with all information
+#### 5. Can also check and update Pull request for Python libraries as well
+#### 6. Re-usable code so can add more language support in future
+#### 7. Styling in CLI
 
 ### Built With
 
@@ -125,18 +126,15 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
+* python [https://www.python.org/downloads/]
 * pip
   ```sh
   python3 -m pip install --upgrade pip
   ```
 
-### Installation
+### Installation of code from package published on Pypi (Easy to download and use)
 
-1. Clone the repo
-    ```sh
-    git clone https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014
-    ```
-2. Create and Activate virtal environment 
+1. Create and Activate virtual environment 
     ```sh
     py -m venv <env-name>
     ```
@@ -144,16 +142,25 @@ This is an example of how to list things you need to use the software and how to
     ```sh
     <env-name>\Scripts\activate.bat
     ```
-4. Install python libraries
+
+2. Install Package from Pypi
+   ```sh
+   pip install Dyte-Dependency-version-checker
+   ```
+   [Note : Skip installation from Direct repo if you already installed our package from Pypi]
+
+### Usage
+
+3. Help command 
     ```sh
-    pip install -r requirements.txt
+    dyte --help
     ```
-5. Use above to enter csv file and check dependency version
+4. Use below command to enter csv file and check dependency version
     ```sh
     dyte check -i <file-name>.csv -d <dependency-name>
     ```
    
-    We can also give multiple dependency to check for example
+    We can also give multiple dependency to check. for example
     ```sh
     dyte check -i <file-name>.csv -d <dependency-name> -d <dependency-name> -d <dependency-name>
     ```
@@ -162,14 +169,71 @@ This is an example of how to list things you need to use the software and how to
     -i = input-file
     -d = depedency-name
     ```
- 6. Use above to enter csv file and update PULL request based on version of dependency
+
+5. Use below command to enter csv file and update PULL request based on version of dependency
     ```sh
     dyte update -i <file-name>.csv -d <dependency-name>
     ```
    
-    We can also give multiple dependency to check for example
+    We can also give multiple dependency to check. for example
     ```sh
     dyte update -i <file-name>.csv -d <dependency-name> -d <dependency-name> -d <dependency-name>
+    ```
+   
+    ```
+    update = to create PR if version is not satisfied 
+    -i = input-file
+    -d = depedency-name
+    ```
+
+
+
+### Installation From direct repo
+
+1. Create and Activate virtual environment 
+    ```sh
+    py -m venv <env-name>
+    ```
+    
+    ```sh
+    <env-name>\Scripts\activate.bat
+    ```
+
+2. Clone the repo
+    ```sh
+    git clone https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014
+    ```
+
+3. Install python libraries from requirements.txt
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+### Usage
+  
+4. Use bellow to enter csv file and check dependency version
+    ```sh
+    python dyte.py check -i <file-name>.csv -d <dependency-name>
+    ```
+   
+    We can also give multiple dependency to check for example
+    ```sh
+    python dyte.py check -i <file-name>.csv -d <dependency-name> -d <dependency-name> -d <dependency-name>
+    ```
+   
+    ```
+    -i = input-file
+    -d = depedency-name
+    ```
+
+5. Use bellow to enter csv file and update PULL request based on version of dependency
+    ```sh
+    python dyte.py update -i <file-name>.csv -d <dependency-name>
+    ```
+   
+    We can also give multiple dependency to check for example
+    ```sh
+    python dyte.py update -i <file-name>.csv -d <dependency-name> -d <dependency-name> -d <dependency-name>
     ```
    
     ```
@@ -183,7 +247,7 @@ This is an example of how to list things you need to use the software and how to
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage with output
 
 ### Exceuting command : dyte check -i input.csv -d axios@0.23.0
 
@@ -243,7 +307,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - Harsh Kanani - harshkanani100@gmail.com
+Your Name - Harsh Kanani (19BCE2562)- harshkanani100@gmail.com
 
 Project Link: [https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014](https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014)
 
@@ -270,5 +334,5 @@ Project Link: [https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014]
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/harsh-kanani-69a45818b/
 [product-screenshot]: images/screenshot.png
