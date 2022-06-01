@@ -93,9 +93,9 @@ clear output. And support package.json of nodeJS and requirements.txt of python.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Extra Features
-#### 1. Published package on Pypi so anyone can use using Pypi [Dyte Dependency vesrion checker](https://pypi.org/project/Dyte-Dependency-version-checker/)
+#### 1. Published package on Pypi so anyone can use using Pypi [Dyte Dependency version checker](https://pypi.org/project/Dyte-Dependency-version-checker/)
 #### 2. supports NodeJs and Python Both
-#### 3. Can work on Python and NodeJS Dependency checker
+#### 3. Can check muliple dependencies with single command on both Python and NodeJS Dependency file
 #### 4. Proper format of csv along with all information
 #### 5. Can also check and update Pull request for Python libraries as well
 #### 6. Re-usable code so can add more language support in future
