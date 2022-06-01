@@ -1,0 +1,3 @@
+[console_scripts]
+dyte = dyte_cli_package.dyte:messages
+
