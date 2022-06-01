@@ -1,7 +1,7 @@
 repo,repo link,dependacy_name,version,version_satisfied,update_pr
-dyte-react-sample-app,dyte-in/react-sample-app,axios,0.24.0,True,
-dyte-js-sample-app,dyte-in/javascript-sample-app,axios,0.21.1,False,https://github.com/dyte-in/javascript-sample-app/pull/308
-dyte-sample-app-backend,dyte-in/backend-sample-app,axios,0.23.0,True,
+dyte-react-sample-app,dyte-in/react-sample-app,No Dependacy found,No version found,No version found,
+dyte-js-sample-app,dyte-in/javascript-sample-app,dotenv,8.2.0,False,https://github.com/dyte-in/javascript-sample-app/pull/316
+dyte-sample-app-backend,dyte-in/backend-sample-app,dotenv,10.0.0,False,https://github.com/dyte-in/backend-sample-app/pull/83
 fungataua-crm-backend,harshkanani014/fungataua-crm-backend,No Dependacy found,No version found,No version found,
 erp-backend,harshkanani014/erp-backend,No Dependacy found,No version found,No version found,
 js-plugin-template,dyte-in/js-plugin-template,No Dependacy found,No version found,No version found,

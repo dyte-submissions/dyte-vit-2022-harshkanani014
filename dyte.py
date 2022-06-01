@@ -214,7 +214,7 @@ def update_dependacy_version(input_file, dependancy_names):
                     bar.next()
                     print(" creating PR request for " + repo_link)
                     github_user = g.get_user()
-                    print(github_user.login)
+                    # print(github_user.login)
                     myfork = github_user.create_fork(repo)
                     sb = repo.get_branch('main')
                     try:
