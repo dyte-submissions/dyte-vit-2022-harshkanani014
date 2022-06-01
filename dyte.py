@@ -71,9 +71,17 @@ def check_dependancy_versions(input_file, dependancy_names):
     
     g = Github(github_token)
     output_file = open("output.csv", "w")
-    input_file = open(input_file, "r")
-    writer = csv.writer(output_file)
-    reader = csv.reader(input_file)
+    try:
+        input_file = open(input_file, "r")
+    except:
+        print("Error : No file found in directory")
+        exit()
+    try:
+        writer = csv.writer(output_file)
+        reader = csv.reader(input_file)
+    except:
+        print("Error : only CSV File allowed")
+        exit()
     line_count = 0
     data = {}
     for row in reader:
@@ -107,7 +115,12 @@ def check_dependancy_versions(input_file, dependancy_names):
                 repo_link = repo_link[19:len(repo_link)-1]
             else:
                 repo_link = repo_link[19:]
-            repo = g.get_repo(repo_link)
+            try:
+                repo = g.get_repo(repo_link)
+            except:
+                print()
+                print("Error : Invalid Github Token")
+                exit()
             try:
                 bar.next()
                 print(" checking nodejs package.json")
@@ -142,9 +155,17 @@ def update_dependacy_version(input_file, dependancy_names):
    
     g = Github(github_token)
     output_file = open("updated_output.csv", "w")
-    input_file = open(input_file, "r")
-    writer = csv.writer(output_file)
-    reader = csv.reader(input_file)
+    try:
+        input_file = open(input_file, "r")
+    except:
+        print("Error : No file found in directory")
+        exit()
+    try:
+        writer = csv.writer(output_file)
+        reader = csv.reader(input_file)
+    except:
+        print("Error : only CSV File allowed")
+        exit()
     line_count = 0
     data = {}
     for row in reader:
@@ -179,7 +200,12 @@ def update_dependacy_version(input_file, dependancy_names):
                 repo_link = repo_link[19:len(repo_link)-1]
             else:
                 repo_link = repo_link[19:]
-            repo = g.get_repo(repo_link)
+            try:
+                repo = g.get_repo(repo_link)
+            except:
+                print()
+                print("Error: Invalid Github Token")
+                exit()
             try:
                 bar.next()
                 print(" checking nodejs package.json")
@@ -188,6 +214,7 @@ def update_dependacy_version(input_file, dependancy_names):
                     bar.next()
                     print(" creating PR request for " + repo_link)
                     github_user = g.get_user()
+                    print(github_user.login)
                     myfork = github_user.create_fork(repo)
                     sb = repo.get_branch('main')
                     try:
@@ -210,14 +237,14 @@ def update_dependacy_version(input_file, dependancy_names):
                     pr  = myfork.update_file(contents.path, "update dependacy", new_content, contents.sha, branch="dependancy-update")
                     try:
                         pr = repo.create_pull(title="chore: updates " + dependency_name + " to " + version, 
-                                                            body="Updates the version of " + dependency_name +  " from " + result[3] + " to " + version, 
-                                                            head="harshkanani014:dependancy-update", 
-                                                            base="main",
-                                                            )
+                                                    body="Updates the version of " + dependency_name +  " from " + result[3] + " to " + version, 
+                                                    head=str(github_user.login)+":dependancy-update", 
+                                                    base="main",
+                                                    )
                         pr_request = pr.html_url
                         result.append(pr_request)
                     except:
-                        result.append('')
+                        result.append('PR already exists')
 
                 else:
                     result.append('')
@@ -254,13 +281,13 @@ def update_dependacy_version(input_file, dependancy_names):
                         try:
                             pr = repo.create_pull(title="chore: updates " + dependency_name + " to " + version, 
                                                                 body="Updates the version of " + dependency_name +  " from " + result[3] + " to " + version, 
-                                                                head="harshkanani014:dependancy-update", 
+                                                                head=str(github_user.login)+":dependancy-update", 
                                                                 base="master",
                                                                 )
                             pr_request = pr.html_url
                             result.append(pr_request)
                         except:
-                            result.append('')
+                            result.append('PR already exists')
                     else:
                         result.append('')
                     writer.writerow(result)

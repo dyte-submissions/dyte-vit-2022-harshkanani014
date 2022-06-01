@@ -10,7 +10,7 @@ long_description = 'Command Line Interface (CLI) Tool to check version of depend
 
 setup(
 		name ='Dyte Dependency version checker',
-		version ='1.0.1',
+		version ='1.0.3',
 		author ='Harsh Kanani',
 		author_email ='harshkanani@gmail.com',
 		url ='https://github.com/dyte-submissions/dyte-vit-2022-harshkanani014',
